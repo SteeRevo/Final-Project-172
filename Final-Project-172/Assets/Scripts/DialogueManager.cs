@@ -13,12 +13,17 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public int textSpeed = 100;
     public bool dialogueisRunning = false;
+    public BackgroundChanger bgChanger;
+    public Image background;
+    public Sprite superMarket;
+    public GameObject dialogueBox;
 
     private Story currentStory;
     private string currentSentence;
     private string charName;
     private bool isRunning = false;
     private Queue<string> sentences;
+    private string currentLocation;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +43,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueisRunning = true;
         currentStory = new Story(inkJson.text);
+        currentLocation = (string)currentStory.variablesState["currentLocation"];
+        Debug.Log(currentLocation);
         DisplayNextSentence();
     }
 
@@ -51,12 +58,14 @@ public class DialogueManager : MonoBehaviour
         }
         else if (!currentStory.canContinue)
         {
+            
             EndDialogue();
             return;
         }
         else
         {
             Debug.Log("here");
+            
             currentSentence = currentStory.Continue();
             HandleTags(currentStory.currentTags);
             nameText.text = charName;
@@ -103,7 +112,23 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
+        currentLocation = "distortedSupermarket";
+        changeBackground();
         dialogueisRunning = false;
+        dialogueBox.SetActive(false);
+    }
+
+    private void changeBackground() 
+    {
+        switch(currentLocation)
+        {
+            case "distortedSupermarket":
+                background.sprite = superMarket;
+                break;
+            default:
+                Debug.Log("could not change background");
+                break;
+        }
     }
 }
 

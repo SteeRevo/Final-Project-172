@@ -8,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private DialogueManager dialogueManager;
 
+    public GameObject dialogueBox;
+
     public void TriggerDialogue()
     {
         dialogueManager.StartDialogue(inkJson);
@@ -22,6 +24,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !dialogueManager.dialogueisRunning)
         {
+            dialogueBox.SetActive(true);
             Debug.Log("Pressed primary button.");
             TriggerDialogue();
         }
