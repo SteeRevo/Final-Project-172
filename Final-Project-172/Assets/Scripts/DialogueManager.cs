@@ -22,14 +22,7 @@ public class DialogueManager : MonoBehaviour
     private string currentSentence;
     private string charName;
     private bool isRunning = false;
-    private Queue<string> sentences;
     private string currentLocation;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        sentences = new Queue<string>();
-    }
 
     void Update()
     {
