@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Ink.Runtime;
 
 public class DialogueManager : MonoBehaviour
 {
 
+    private const string CHAR_TAG = "charName";
+
     public Text nameText;
     public Text dialogueText;
     public int textSpeed = 100;
+    public bool dialogueisRunning = false;
 
+    private Story currentStory;
     private string currentSentence;
+    private string charName;
     private bool isRunning = false;
     private Queue<string> sentences;
 
@@ -28,19 +34,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (TextAsset inkJson)
     {
-        Debug.Log("Starting conversation with" + dialogue.name);
-
-        nameText.text = dialogue.name;
-
-        sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-        
+        dialogueisRunning = true;
+        currentStory = new Story(inkJson.text);
         DisplayNextSentence();
     }
 
@@ -52,16 +49,41 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentSentence;
             isRunning = false;
         }
-        else if (sentences.Count == 0)
+        else if (!currentStory.canContinue)
         {
             EndDialogue();
             return;
         }
         else
         {
-            currentSentence = sentences.Dequeue();
+            Debug.Log("here");
+            currentSentence = currentStory.Continue();
+            HandleTags(currentStory.currentTags);
+            nameText.text = charName;
             StopAllCoroutines();
             StartCoroutine(TypeSentence(currentSentence));
+        }
+    }
+    
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitTag = tag.Split(':');
+            
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagKey)
+            {
+                case CHAR_TAG:
+                    Debug.Log("charName=" + tagValue);
+                    charName = tagValue;
+                    break;
+                default:
+                    Debug.LogWarning("Tag cam in but is not in current scope");
+                 break;
+            }
         }
     }
 
@@ -81,6 +103,14 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
+        dialogueisRunning = false;
     }
-
 }
+
+
+/*
+Things to be added:
+    - character model support
+    - dialogue box disappearing and appearing on start and end
+    - reads from files (maybe Ink)
+*/

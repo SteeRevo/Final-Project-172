@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public TextAsset inkJson;
+
+    private DialogueManager dialogueManager;
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        dialogueManager.StartDialogue(inkJson);
+    }
+
+    void Start()
+    {
+        dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !dialogueManager.dialogueisRunning)
         {
             Debug.Log("Pressed primary button.");
             TriggerDialogue();
