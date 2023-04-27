@@ -20,7 +20,7 @@ Well then let's see if this sounds familiar. #charName:Man in Suit
 
 Your name is Nicholas. The hospital staff said they found you stumbling around outside this place before you passed out and hit your head on the stairs outside. Ring a bell?
 
-I shake my head #charName: 
+You shake your head #charName: 
 
 How about the fact that I'm your brother. Does the name Cooper mean anything to you? #charName:Man in Suit
 
@@ -28,13 +28,13 @@ I'm sorry. I got nothing. #charName:Nicholas
 
 Man, I was really hoping it wouldn't come to this #charName:Cooper
 
-Dr. Hill, who is your attending physician told me that when you came too a day ago, you told him that you couldn't remember anything. You remember that at least? 
+Your doctor told me that when you came to a day ago, you said you couldn't remember anything. You remember that at least? 
 
 Yes, I remember. #charName:Nicholas
 
 At least your short term isn't shot. Bright side. #charName:Cooper
 
-Dr. Hill stated that your amnesia could register from a number of things. She believes its from your head injury. A concussion. On the other hand, I believe that its probably alcohol related brain damage.
+Dr. Hill stated that your amnesia could be caused by a number of things. She believes its from your head injury. A concussion. On the other hand, I believe that its probably alcohol-related.
 
 Alcohol? #charName:Nicholas
 
@@ -50,7 +50,7 @@ Your head injury isn't life threatening or anything so the doc's put you in my c
 
 Here's your wallet. I got your address from it so I'll drive you back right now.
 
-Recieve wallet item #charName:
+You got your wallet
 
 We're brothers but we don't live together? #charName:Nicholas
 
