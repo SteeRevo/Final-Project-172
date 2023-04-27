@@ -728,8 +728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 347.27, y: 159.3378}
-  m_SizeDelta: {x: 105.47, y: 79.3244}
+  m_AnchoredPosition: {x: 317.9994, y: 163.09}
+  m_SizeDelta: {x: 107.47, y: 71.494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264416891
 MonoBehaviour:
@@ -774,7 +774,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 264416892}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 299129251}
+        m_TargetAssemblyTypeName: InventoryUISystem, Assembly-CSharp
+        m_MethodName: ToggleInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &264416892
 MonoBehaviour:
   m_ObjectHideFlags: 0
