@@ -8,12 +8,13 @@ public class DialogueManager : MonoBehaviour
 {
 
     private const string CHAR_TAG = "charName";
+    private const string BG_TAG = "background";
 
     public Text nameText;
     public Text dialogueText;
     public int textSpeed = 100;
     public bool dialogueisRunning = false;
-    public BackgroundChanger bgChanger;
+    public LayoutManager layoutManager;
     public Image background;
     public Sprite superMarket;
     public GameObject dialogueBox;
@@ -82,6 +83,10 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log("charName=" + tagValue);
                     charName = tagValue;
                     break;
+                case BG_TAG:
+                    Debug.Log("background=" + tagValue);
+                    charName = tagValue;
+                    break;
                 default:
                     Debug.LogWarning("Tag cam in but is not in current scope");
                  break;
@@ -106,22 +111,9 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("End of Conversation");
         currentLocation = "distortedSupermarket";
-        changeBackground();
+        layoutManager.changeBackground(currentLocation);
         dialogueisRunning = false;
         dialogueBox.SetActive(false);
-    }
-
-    private void changeBackground() 
-    {
-        switch(currentLocation)
-        {
-            case "distortedSupermarket":
-                background.sprite = superMarket;
-                break;
-            default:
-                Debug.Log("could not change background");
-                break;
-        }
     }
 }
 
@@ -130,5 +122,6 @@ public class DialogueManager : MonoBehaviour
 Things to be added:
     - character model support
     - dialogue box disappearing and appearing on start and end
-    - reads from files (maybe Ink)
+    - add save and load
+    - make dialoguemanager a singleton
 */
