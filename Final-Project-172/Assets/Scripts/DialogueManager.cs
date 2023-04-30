@@ -110,8 +110,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of Conversation");
-        currentLocation = "distortedSupermarket";
-        layoutManager.changeBackground(currentLocation);
         dialogueisRunning = false;
         dialogueBox.SetActive(false);
     }

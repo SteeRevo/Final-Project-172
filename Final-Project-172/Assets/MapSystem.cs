@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUISystem : MonoBehaviour
+public class MapSystem : MonoBehaviour
 {
-    public GameObject inventoryPanel;
+    public GameObject mapPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,16 @@ public class InventoryUISystem : MonoBehaviour
         
     }
 
-    public void ToggleInventory() {
-        if(!inventoryPanel.activeSelf) {
-            inventoryPanel.SetActive(true);
+    public void ToggleMap() {
+        if(!mapPanel.activeSelf) {
+            mapPanel.SetActive(true);
         } else {
-            inventoryPanel.SetActive(false);
+            mapPanel.SetActive(false);
         }
+    }
+
+    public void changeLocation()
+    {
+        
     }
 }
