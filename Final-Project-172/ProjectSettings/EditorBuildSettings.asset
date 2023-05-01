@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VisualNovel.unity
     guid: 6292c342b2fc5864ba1cfc07f196eccd
+  - enabled: 1
+    path: Assets/Scenes/Apartment.unity
+    guid: e5387d2eb92581947b1b9217cc450118
   m_configObjects: {}
