@@ -11,6 +11,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public GameObject dialogueBox;
 
+    public bool autoRun = false;
+
     public void TriggerDialogue()
     {
         if (!dialogueManager.isRunning)
@@ -23,7 +25,10 @@ public class DialogueTrigger : MonoBehaviour
 
     void Start()
     {
-        //dialogueManager = FindObjectOfType<DialogueManager>();
+        if(autoRun)
+        {
+            TriggerDialogue();
+        }
     }
 
     /*
