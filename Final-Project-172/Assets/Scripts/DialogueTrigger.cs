@@ -12,13 +12,18 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject dialogueBox;
 
     public bool autoRun = false;
+   
 
     public void TriggerDialogue()
     {
-        if (!dialogueManager.isRunning)
+       
+        if (!dialogueManager.dialogueisRunning)
         {
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue(inkJson);
+        }
+        else{
+            Debug.Log("in dialogue right now");
         }
         
     }

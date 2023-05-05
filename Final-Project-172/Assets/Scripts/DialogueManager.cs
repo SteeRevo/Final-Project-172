@@ -19,11 +19,15 @@ public class DialogueManager : MonoBehaviour
     public Sprite superMarket;
     public GameObject dialogueBox;
     public bool isRunning = false;
+    
 
     private Story currentStory;
     private string currentSentence;
     private string charName;
     private string currentLocation;
+
+
+   
 
     void Update()
     {

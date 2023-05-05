@@ -549,6 +549,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6395695804150201555, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
   m_PrefabInstance: {fileID: 6395695804757420711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1817967518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6395695803568723522, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+  m_PrefabInstance: {fileID: 6395695804757420711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817967520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817967518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8942bd9dd6404524ebd7d81af5d7c157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862097444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1065,19 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 30487108}
+    - target: {fileID: 1165592345804160751, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 850.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1165592346923626152, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 30487108}
+    - target: {fileID: 6395695803363013287, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: location
+      value: Apartment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6395695803363013287, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 30487108}

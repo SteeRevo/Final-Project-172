@@ -6,17 +6,24 @@ using UnityEngine.SceneManagement;
 public class LocationChanger : MonoBehaviour
 {
     public string location;
+
+    [SerializeField]
+    private DialogueManager dialogueManager;
     
     public void locationChanger(string location)
     {
-        switch(location)
+        if(!dialogueManager.dialogueisRunning)
         {
-            case "Apartment":
-                SceneManager.LoadScene("Apartment");
-                break;
-            default:
-                Debug.Log("No location found");
-                break;
+            switch(location)
+            {
+                case "Apartment":
+                    SceneManager.LoadScene("Apartment");
+                    break;
+                default:
+                    Debug.Log("No location found");
+                    break;
+            }
         }
+        
     }
 }
