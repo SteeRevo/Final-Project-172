@@ -14,16 +14,18 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public int textSpeed = 100;
     public bool dialogueisRunning = false;
-    public LayoutManager layoutManager;
-    public Image background;
-    public Sprite superMarket;
+    
     public GameObject dialogueBox;
     public bool isRunning = false;
+    
 
     private Story currentStory;
     private string currentSentence;
     private string charName;
     private string currentLocation;
+
+
+   
 
     void Update()
     {
