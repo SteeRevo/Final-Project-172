@@ -24,5 +24,5 @@ public class Collectable : MonoBehaviour
 }
 
 public enum CollectableType {
-        NONE, WALLET
+        NONE, WALLET, CAR_KEYS
 }
