@@ -24,6 +24,9 @@ public class DialogueManager : MonoBehaviour
     private string charName;
     private string currentLocation;
 
+    public delegate void CompletedDialogue();
+    public static event CompletedDialogue finishedDialogue;
+
 
    
 
@@ -114,6 +117,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of Conversation");
         dialogueisRunning = false;
         dialogueBox.SetActive(false);
+        finishedDialogue();
     }
 }
 

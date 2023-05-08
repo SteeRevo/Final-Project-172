@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,9 +156,6 @@ MonoBehaviour:
   dialogueText: {fileID: 491633415}
   textSpeed: 12
   dialogueisRunning: 0
-  layoutManager: {fileID: 1862097445}
-  background: {fileID: 75921498}
-  superMarket: {fileID: 21300000, guid: fa3d243dd451dcd4c8ae37084bafb3fd, type: 3}
   dialogueBox: {fileID: 1741788788}
   isRunning: 0
 --- !u!4 &30487109
@@ -1033,6 +1030,14 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 30487108}
+    - target: {fileID: 1165592345774035050, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165592345774035050, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueList.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: d587ba67ff8d6c2459647dedcc57d764, type: 3}
     - target: {fileID: 1165592345804160747, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: dialogueManager
       value: 
@@ -1041,6 +1046,22 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 30487108}
+    - target: {fileID: 1165592346923626152, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165592346923626152, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueList.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 1654bd8871a5097468aeb054cfb4ec5c, type: 3}
+    - target: {fileID: 6395695803363013287, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 30487108}
+    - target: {fileID: 6395695803363016026, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: DreamMarket
+      objectReference: {fileID: 0}
     - target: {fileID: 6395695803429934537, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: m_IsActive
       value: 0
