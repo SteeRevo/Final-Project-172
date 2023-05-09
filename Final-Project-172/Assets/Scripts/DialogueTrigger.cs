@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public TextAsset inkJson;
 
     [SerializeField]
     private DialogueManager dialogueManager;
@@ -27,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
         
         if (!dialogueManager.dialogueisRunning)
         {
-            Debug.Log(currentDiaNum);
+            //Debug.Log(currentDiaNum);
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue(dialogueList[currentDiaNum]);
             completed = true;
