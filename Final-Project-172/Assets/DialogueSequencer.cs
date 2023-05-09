@@ -47,7 +47,8 @@ public class DialogueSequencer : MonoBehaviour
         else if(nextDiaDone1 && !isFinished)
         {
            background.SetActive(true);
-           //StarCoroutine(DialoguePauseThenGo(nextDialogue1))
+           StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+           isFinished = true;
         }
 
         
