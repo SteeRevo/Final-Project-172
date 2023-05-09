@@ -30,6 +30,7 @@ public class DialogueSequencer : MonoBehaviour
 
     void advanceDialogue1()
     {
+        //after examinign supermarket
         if(superMarket.completed && vendingMachine.completed && !nextDiaDone)
         {
             StartCoroutine(DialoguePauseThenGo(nextDialogue1));
@@ -37,6 +38,7 @@ public class DialogueSequencer : MonoBehaviour
 
             
         }
+        //turning to face the darkness
         else if(nextDiaDone && !nextDiaDone1)
         {
             background.SetActive(false);
@@ -44,6 +46,7 @@ public class DialogueSequencer : MonoBehaviour
             nextDiaDone1 = true;
         }
 
+        //going back to the supermarket
         else if(nextDiaDone1 && !isFinished)
         {
            background.SetActive(true);
