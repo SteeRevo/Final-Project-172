@@ -32,6 +32,7 @@ public class DialogueTrigger : MonoBehaviour
             completed = true;
             if(currentDiaNum < (dialogueList.Count - 1)){
                 currentDiaNum += 1;
+                completed = false;
             }
         }
         else

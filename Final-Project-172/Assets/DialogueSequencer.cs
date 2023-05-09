@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueSequencer : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class DialogueSequencer : MonoBehaviour
 
     public DialogueTrigger nextDialogue1;
     private bool nextDiaDone = false;
+    private bool nextDiaDone1 = false;
+    private bool nextDiaDone2 = false;
+    private bool isFinished = false;
+
+    public GameObject background;
+    
 
     void OnEnable()
     {
@@ -23,15 +30,30 @@ public class DialogueSequencer : MonoBehaviour
 
     void advanceDialogue1()
     {
-        if(superMarket.completed && vendingMachine.completed && nextDiaDone == false)
+        if(superMarket.completed && vendingMachine.completed && !nextDiaDone)
         {
-            Debug.Log("playing next dialogue");
             StartCoroutine(DialoguePauseThenGo(nextDialogue1));
             nextDiaDone = true;
 
             
         }
+        else if(nextDiaDone && !nextDiaDone1)
+        {
+            background.SetActive(false);
+            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDiaDone1 = true;
+        }
+
+        else if(nextDiaDone1 && !isFinished)
+        {
+           background.SetActive(true);
+           //StarCoroutine(DialoguePauseThenGo(nextDialogue1))
+        }
+
+        
     }
+
+
 
     IEnumerator DialoguePauseThenGo(DialogueTrigger dt)
     {
