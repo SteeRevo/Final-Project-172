@@ -15,7 +15,9 @@ public class DialogueManager : MonoBehaviour
     public int textSpeed = 100;
     public bool dialogueisRunning = false;
     
-    public GameObject dialogueBox;
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject[] choices;
+    private Text[] choicesText;
     public bool isRunning = false;
     
 
@@ -23,16 +25,23 @@ public class DialogueManager : MonoBehaviour
     private string currentSentence;
     private string charName;
     private string currentLocation;
+    private bool isMakingChoice = false;
 
     public delegate void CompletedDialogue();
     public static event CompletedDialogue finishedDialogue;
 
-
-   
+    void Start()
+    {
+        choicesText = new Text[choices.Length];
+        for (int i = 0; i < choices.Length; i++)
+        {
+            choicesText[i] = choices[i].GetComponentInChildren<Text>();
+        }
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !isMakingChoice)
         {
             DisplayNextSentence();
         }
@@ -63,16 +72,45 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("here");
-            
             currentSentence = currentStory.Continue();
             HandleTags(currentStory.currentTags);
             nameText.text = charName;
             StopAllCoroutines();
             StartCoroutine(TypeSentence(currentSentence));
+            DisplayChoices();
         }
     }
     
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("Too Many Choices");
+        }
+        int index = 0;
+        foreach(Choice choice in currentChoices)
+        {
+            isMakingChoice = true;
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void MakeChoice(int choiceIndex)
+    {
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        isMakingChoice = false;
+        DisplayNextSentence();
+    }
+
     private void HandleTags(List<string> currentTags)
     {
         foreach (string tag in currentTags)

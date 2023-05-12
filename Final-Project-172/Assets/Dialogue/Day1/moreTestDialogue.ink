@@ -59,6 +59,13 @@ What the hell kinda question is that? I'm 30 and you're 34. Damn, how hard DID y
 ... #charName:Nicholas
 
 Let's go already. I'll drive.
+    
+    * [There were two choices.]
+        This was choice 0.
+        
+    * [There were four lines of content.]
+        This was choice 1.
+
 
 ~ currentLocation = "outsideApartment"
 
