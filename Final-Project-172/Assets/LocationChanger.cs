@@ -19,6 +19,12 @@ public class LocationChanger : MonoBehaviour
                 case "DreamMarket":
                     SceneManager.LoadScene("DreamMarket");
                     break;
+                case "Apartment":
+                    SceneManager.LoadScene("Apartment");
+                    break;
+                case "PawnShop":
+                    SceneManager.LoadScene("PawnShop");
+                    break;
                 default:
                     Debug.Log("No location found");
                     break;
