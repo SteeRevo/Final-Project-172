@@ -19,8 +19,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private int currentDiaNum = 0;
 
-    
-   
 
     public void TriggerDialogue()
     {

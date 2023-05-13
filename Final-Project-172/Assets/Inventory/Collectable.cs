@@ -7,16 +7,17 @@ public class Collectable : MonoBehaviour
 {
 
     public CollectableType type;
-    public Image collectableItem;
+    
     public Sprite icon;
     public GameObject InventoryHolder;
-    public Player player;
-
+    private Player player;
+    private Image collectableItem;
     public void CollectItem() {
         Debug.Log("collected!");
         // Player player = GetComponent<Player>();
         // player.inventory.Add(this);
         player = InventoryHolder.GetComponent<Player>();
+        collectableItem = this.gameObject.GetComponent<Image>();
         // Player player = GetComponent<Player>();
         player.inventory.Add(this);
         collectableItem.enabled = false;
