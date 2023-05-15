@@ -8,12 +8,15 @@ public class SlotsUI : MonoBehaviour
 {
     public Image itemIcon;
     public TextMeshProUGUI quantityText;
+    public CollectableType type;
 
     public void SetItem(Inventory.Slot slot) {
         if (slot != null) {
             itemIcon.sprite = slot.icon;
+            type = slot.type;
             itemIcon.color = new Color(1,1,1,1);
             quantityText.text = slot.count.ToString();
+            Debug.Log(type);
         }
     }
 
