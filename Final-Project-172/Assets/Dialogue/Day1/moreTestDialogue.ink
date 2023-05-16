@@ -1,72 +1,83 @@
 VAR currentLocation = "Hospital"
 
-Hey, you awake? #charName:Man in Suit
+Oh good. You're up. #charName:Man in Suit
 
-Y..Yes? #charName:???
+You...I know you. #charName:???
 
-Well, you're at least somewhat coherent. That's better than when we usually meet. #charName:Man in Suit
+The tired man in front of me gives me a pain look. #charName:
 
-So, do you know who I am? #charName:Man in Suit
+I would sure hope you do. #charName: Man in Suit
 
-I'm sorry...I have no idea who you are. #charName:???
+More importantly...
 
-HA! An apology? That's a first. #charName:Man in Suit
+I'm hoping you also know yourself.
 
-Guess you really did lose your memory.
+...Nicholas. That's my name. #charName: ???
 
-You're right...I can't remember a thing. #charName:???
+Bravo. Ten points. #charName: Man in Suit
 
-Well then let's see if this sounds familiar. #charName:Man in Suit
+And?
 
-Your name is Nicholas. The hospital staff said they found you stumbling around outside this place before you passed out and hit your head on the stairs outside. Ring a bell?
+He gestures to himself. #charName:
 
-You shake your head #charName: 
+Copper? #charName: Nicholas
 
-How about the fact that I'm your brother. Does the name Cooper mean anything to you? #charName:Man in Suit
+Close enough. #charName: Man in Suit
 
-I'm sorry. I got nothing. #charName:Nicholas
+It's Cooper. #charName: Cooper
 
-Man, I was really hoping it wouldn't come to this #charName:Cooper
+Copper would be an very unfortunate choice by Mom and Dad.
 
-Your doctor told me that when you came to a day ago, you said you couldn't remember anything. You remember that at least? 
+We're brothers? #charName: Nicholas
 
-Yes, I remember. #charName:Nicholas
+Sadly, yes. #charName: Cooper
 
-At least your short term isn't shot. Bright side. #charName:Cooper
+You wouldn't be able to tell at a glance though.
 
-Dr. Hill stated that your amnesia could be caused by a number of things. She believes its from your head injury. A concussion. On the other hand, I believe that its probably alcohol-related.
+I inherited all of Mom's good looks and meanwhile you...
 
-Alcohol? #charName:Nicholas
+You have Dad's nose.
 
-Oh great. You don't remember that you're a raging alcoholic. Maybe this memory loss will be a good thing. #charName:Cooper
+What happened to me? Why am I in the hospital? #charName: Nicholas
 
-For you at least. For me, I have to take time off work to take care of you. Until you get your memory back. You can understand why this is kinda pissing me off, yeah? 
+I'd like to know the answer myself. #charName: Cooper
 
-Yes...I understand. I'm sorry. #charName:Nicholas
+Dr. Hill told me the nurses found you passed out in front of the hospital.
 
-Geez, how bad did you hit your head? It's like I'm talking to a robot. Well, whatever. I'm taking you home.  #charName:Cooper
+You were coming from the forest near the west of the town for some reason.
 
-Your head injury isn't life threatening or anything so the doc's put you in my care for now. You're discharged. We'll have to come back to check up on you but for now, you can go home.
+Now, I know we haven't talked in a few years...
 
-Here's your wallet. I got your address from it so I'll drive you back right now.
+but I didn't take you for the type to take a midnight walk in the woods.
 
-You got your wallet
+Care to explain yourself?
 
-We're brothers but we don't live together? #charName:Nicholas
+... #charName: Nicholas
 
-What the hell kinda question is that? I'm 30 and you're 34. Damn, how hard DID you hit your head? #charName:Cooper
+To be honest, I don't remember.
 
-... #charName:Nicholas
+I see. 
 
-Let's go already. I'll drive.
-    
-    * [There were two choices.]
-        This was choice 0.
-        
-    * [There were four lines of content.]
-        This was choice 1.
+That makes sense. #charName: Cooper
+
+I was hoping this wouldn't be the case but the doctor has diagnosed you with a case of mild amnesia.
+
+So it looks like it's up to me...to take care of you.
+
+He says that last of the sentence with a look of dread and pain in his eyes. #charName:
+
+Let's go home for now. #charName: Cooper
+
+I'll drive but I don't know where you live.
+
+Check your wallet on the table over there for your address and we can leave.
 
 
-~ currentLocation = "outsideApartment"
+
+
+
+
+
+
 
 

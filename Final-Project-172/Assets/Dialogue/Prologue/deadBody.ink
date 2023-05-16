@@ -6,14 +6,28 @@ It's hard to make out the features in the dark.
 
 But there's a sense of familiarity.
 
-As I go to kneel down next to the body, I hear something behind me.
+I take a look at this person's face.
+
+Most likely male.
+
+It's a face I recognize, but I am unsure how.
+
+It sports a shred, rat-like quality, being sharp and conniving. 
+
+The stubble around face is uneven and unkempt. 
+
+The faint smell of alcholo wafts around him.
+
+As I kneel down next to the body, I hear something behind me.
 
 Rustling in the bushes.
 
-Something is after me.
+Something is after me. 
 
-I run.
+I can't be found near this body.
 
-I can't get caught, I can't get found with this body.
+And so I run.
+
+I can't get caught, I can't get caught with this body.
 
 Every fiber in my body screaming this as my legs move through this forest.
