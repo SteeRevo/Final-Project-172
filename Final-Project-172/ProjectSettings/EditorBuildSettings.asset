@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DreamMarket.unity
     guid: d415bead83f5f814fafbcb6eca769659
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: cf7d9cc46248a4b4aa20af08764c219c
   m_configObjects: {}
