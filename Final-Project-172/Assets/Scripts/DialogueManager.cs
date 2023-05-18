@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isMakingChoice)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isMakingChoice)
         {
             DisplayNextSentence();
         }

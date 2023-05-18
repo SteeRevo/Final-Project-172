@@ -7,9 +7,14 @@ public class DialogueSequencer : MonoBehaviour
 {
 
     public DialogueTrigger superMarket;
+    public GameObject superMarketObj;
     public DialogueTrigger vendingMachine;
+    public GameObject vendingObj;
+
+    public GameObject vendingPuzzle;
 
     public DialogueTrigger nextDialogue1;
+    private bool introDialogue = false;
     private bool nextDiaDone = false;
     private bool nextDiaDone1 = false;
     private bool nextDiaDone2 = false;
@@ -30,18 +35,29 @@ public class DialogueSequencer : MonoBehaviour
 
     void advanceDialogue1()
     {
-        //after examinign supermarket
-        if(superMarket.completed && vendingMachine.completed && !nextDiaDone)
+        if(!introDialogue)
+        {
+            background.SetActive(false);
+            introDialogue = true;
+            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+        }
+
+        //after examining supermarket
+        else if(superMarket.completed && vendingMachine.completed && !nextDiaDone)
         {
             StartCoroutine(DialoguePauseThenGo(nextDialogue1));
             nextDiaDone = true;
+            superMarketObj.SetActive(false);
+            vendingObj.SetActive(false);
+            vendingPuzzle.SetActive(true);
+
 
             
         }
         //turning to face the darkness
         else if(nextDiaDone && !nextDiaDone1)
         {
-            background.SetActive(false);
+            background.SetActive(true);
             StartCoroutine(DialoguePauseThenGo(nextDialogue1));
             nextDiaDone1 = true;
         }
@@ -49,7 +65,7 @@ public class DialogueSequencer : MonoBehaviour
         //going back to the supermarket
         else if(nextDiaDone1 && !isFinished)
         {
-           background.SetActive(true);
+           background.SetActive(false);
            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
            isFinished = true;
         }
