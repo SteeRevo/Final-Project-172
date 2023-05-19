@@ -11,7 +11,9 @@ public class DialogueSequencer : MonoBehaviour
     public DialogueTrigger vendingMachine;
     public GameObject vendingObj;
 
-    public GameObject vendingPuzzle;
+    public GameObject vendingPuzzle1;
+    public GameObject vendingPuzzle2;
+
 
     public DialogueTrigger nextDialogue1;
     private bool introDialogue = false;
@@ -49,7 +51,8 @@ public class DialogueSequencer : MonoBehaviour
             nextDiaDone = true;
             superMarketObj.SetActive(false);
             vendingObj.SetActive(false);
-            vendingPuzzle.SetActive(true);
+            vendingPuzzle1.SetActive(true);
+            vendingPuzzle2.SetActive(true);
 
 
             
