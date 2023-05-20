@@ -8,6 +8,7 @@ public class PrologueDS : MonoBehaviour
 {
 
     public DialogueTrigger deadBody;
+    public GameObject deadBodyObj;
 
     public DialogueTrigger narrationDialogue;
 
@@ -26,24 +27,32 @@ public class PrologueDS : MonoBehaviour
         DialogueManager.finishedDialogue -= advanceDialogue;
     }
 
+    void Start()
+    {
+        runaway = false;
+        isFinished = false;
+    }
+
     void advanceDialogue()
     {
-        if(deadBody.completed && !runaway)
+        if(deadBody.completed && !runaway && !isFinished)
         {
-            background.SetActive(true);
+            lightInDarkbg.SetActive(true);
+            deadBodyObj.SetActive(false);
             StartCoroutine(DialoguePauseThenGo(narrationDialogue));
             runaway = true;
         }
 
-        else if(runaway && !isFinished)
+        else if(deadBody.completed && runaway && !isFinished)
         {
-            lightInDarkbg.SetActive(true);
+           
             StartCoroutine(DialoguePauseThenGo(narrationDialogue));
             isFinished = true;
         }
         
-        else if(isFinished)
+        else if(deadBody.completed && isFinished && runaway)
         {
+            background.SetActive(true);
             lightInDarkbg.SetActive(false);
             StartCoroutine(PauseChangeScene());
         }

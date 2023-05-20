@@ -35,6 +35,15 @@ public class DialogueSequencer : MonoBehaviour
         DialogueManager.finishedDialogue -= advanceDialogue1;
     }
 
+    void Start()
+    {
+        introDialogue = false;
+        nextDiaDone = false;
+        nextDiaDone1 = false;
+        nextDiaDone2 = false;
+        isFinished = false;
+    }
+
     void advanceDialogue1()
     {
         if(!introDialogue)

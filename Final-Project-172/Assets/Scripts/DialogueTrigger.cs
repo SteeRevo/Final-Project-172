@@ -20,12 +20,13 @@ public class DialogueTrigger : MonoBehaviour
     private int currentDiaNum = 0;
 
 
+
     public void TriggerDialogue()
     {
         
         if (!dialogueManager.dialogueisRunning)
         {
-            //Debug.Log(currentDiaNum);
+            Debug.Log(currentDiaNum);
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue(dialogueList[currentDiaNum]);
             completed = true;
@@ -41,12 +42,20 @@ public class DialogueTrigger : MonoBehaviour
         
     }
 
-    void Start()
+    void Awake()
     {
+        currentDiaNum = 0;
         if(autoRun)
         {
             TriggerDialogue();
         }
+        
+    }
+
+    void Start()
+    {
+        
+        
     }
 
     /*

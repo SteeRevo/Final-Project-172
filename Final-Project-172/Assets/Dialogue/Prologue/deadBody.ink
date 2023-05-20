@@ -12,11 +12,11 @@ Most likely male.
 
 It's a face I recognize, but I am unsure how.
 
-It sports a shred, rat-like quality, being sharp and conniving. 
+It sports a shrewd, rat-like quality, being sharp and conniving. 
 
 The stubble around face is uneven and unkempt. 
 
-The faint smell of alcholo wafts around him.
+The faint smell of alcohol wafts around him.
 
 As I kneel down next to the body, I hear something behind me.
 
@@ -30,4 +30,4 @@ And so I run.
 
 I can't get caught, I can't get caught with this body.
 
-Every fiber in my body screaming this as my legs move through this forest.
+Every fiber in my body screaming this as I move through this forest.
