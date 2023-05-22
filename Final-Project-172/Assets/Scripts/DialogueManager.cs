@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     private Text[] choicesText;
     public bool isRunning = false;
     
+    
 
     private Story currentStory;
     private string currentSentence;
