@@ -67,9 +67,6 @@ public class DialogueSequencer : MonoBehaviour
             nextDiaDone = true;
             superMarketObj.SetActive(false);
             vendingObj.SetActive(false);
-            vendingPuzzle1.SetActive(true);
-            vendingPuzzle2.SetActive(true);
-            NicholasPuzzle.SetActive(true);
             Nicholas.enabled = false;
 
 
@@ -91,6 +88,13 @@ public class DialogueSequencer : MonoBehaviour
             background.SetActive(false);
             StartCoroutine(DialoguePauseThenGo(nextDialogue1));
             isFinished = true;
+            
+        }
+        if(isFinished)
+        {
+            vendingPuzzle1.SetActive(true);
+            vendingPuzzle2.SetActive(true);
+            NicholasPuzzle.SetActive(true);
         }
 
         

@@ -153,6 +153,7 @@ MonoBehaviour:
   autoRun: 0
   completed: 0
   dialogueList: []
+  ds: {fileID: 0}
 --- !u!114 &8377797071755623655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,5 +211,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977ebd9fa6d77404da694b5e86a019ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverCursor: {fileID: 2800000, guid: d4abbcb11f884f04f8e5c837e18da4e2, type: 3}
+  hoverCursor: {fileID: 2800000, guid: 081c76d4ab3d6aa4ebd65c6e47e69cfa, type: 3}
   hotSpot: {x: -1, y: -1}

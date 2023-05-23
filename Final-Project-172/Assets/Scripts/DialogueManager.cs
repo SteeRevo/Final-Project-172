@@ -12,13 +12,15 @@ public class DialogueManager : MonoBehaviour
 
     public Text nameText;
     public Text dialogueText;
-    public int textSpeed = 100;
+    public int textSpeed = 10;
     public bool dialogueisRunning = false;
     
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject[] choices;
     private Text[] choicesText;
     public bool isRunning = false;
+
+    public AudioSource textSound;
     
     
 
@@ -50,6 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (TextAsset inkJson)
     {
+        
         dialogueisRunning = true;
         currentStory = new Story(inkJson.text);
         currentLocation = (string)currentStory.variablesState["currentLocation"];
@@ -59,6 +62,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence ()
     {
+        textSound.Stop();
         if (isRunning)
         {
             StopAllCoroutines();
@@ -73,6 +77,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            
             currentSentence = currentStory.Continue();
             HandleTags(currentStory.currentTags);
             nameText.text = charName;
@@ -140,6 +145,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
+        textSound.Play();
         isRunning = true;
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
@@ -149,10 +155,12 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(waitFrames);
         }
         isRunning = false;
+        textSound.Stop();
     }
 
     void EndDialogue()
     {
+        
         Debug.Log("End of Conversation");
         dialogueisRunning = false;
         dialogueBox.SetActive(false);

@@ -16,6 +16,10 @@ public class PrologueDS : MonoBehaviour
     public GameObject lightInDarkbg;
     private bool runaway = false;
     private bool isFinished = false;
+    public bool inCorout = false;
+
+    public GameObject examineButton;
+    public GameObject leaveButton;
 
     void OnEnable()
     {
@@ -35,17 +39,21 @@ public class PrologueDS : MonoBehaviour
 
     void advanceDialogue()
     {
+        
         if(deadBody.completed && !runaway && !isFinished)
         {
+            examineButton.SetActive(false);
+            leaveButton.SetActive(false);
             lightInDarkbg.SetActive(true);
             deadBodyObj.SetActive(false);
+            inCorout = true;
             StartCoroutine(DialoguePauseThenGo(narrationDialogue));
             runaway = true;
         }
 
         else if(deadBody.completed && runaway && !isFinished)
         {
-           
+            inCorout = true;
             StartCoroutine(DialoguePauseThenGo(narrationDialogue));
             isFinished = true;
         }
@@ -62,6 +70,7 @@ public class PrologueDS : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         dt.TriggerDialogue();
+        inCorout = false;
     }
 
     IEnumerator PauseChangeScene()

@@ -60,6 +60,11 @@ public class DialogueTrigger : MonoBehaviour
         
     }
 
+    public void setDialogueNum(int n)
+    {
+        currentDiaNum = n;
+    }
+
     /*
     void Update()
     {
