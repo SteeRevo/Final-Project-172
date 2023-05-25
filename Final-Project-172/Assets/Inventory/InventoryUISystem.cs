@@ -8,6 +8,7 @@ public class InventoryUISystem : MonoBehaviour
     public Player player;
     public List<SlotsUI> slots = new List<SlotsUI>();
     // Start is called before the first frame update
+
     void Start()
     {
         //inventoryPanel.SetActive(false);

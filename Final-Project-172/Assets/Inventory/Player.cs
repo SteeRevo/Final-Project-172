@@ -9,3 +9,12 @@ public class Player : MonoBehaviour
     inventory = new Inventory(2);
    }
 }
+
+// [System.Serializable]
+// public struct InventorySaveData {
+//    public Inventory inventory;
+
+//    public InventorySaveData(Inventory _inv) {
+//       invSystem = _inv;
+//    }
+// }
