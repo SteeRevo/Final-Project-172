@@ -56,6 +56,6 @@ What you want me to start counting? 1, 2, 3, 4...
 
 You must look at your surroundings. #charName: ???
 
-Your mind wants to be repaired so it brought you here for a reasons
+Your mind wants to be repaired so it brought you here for a reason.
 
 That's all the help I can give you at the moment. We're both a bit lost here so let's help each other out.
