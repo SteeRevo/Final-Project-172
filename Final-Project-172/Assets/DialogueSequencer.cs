@@ -15,6 +15,7 @@ public class DialogueSequencer : MonoBehaviour
     public GameObject vendingPuzzle1;
     public GameObject vendingPuzzle2;
     public GameObject NicholasPuzzle;
+    public GameObject NicholasPuzzlePanel;
 
 
     public DialogueTrigger nextDialogue1;
@@ -24,21 +25,27 @@ public class DialogueSequencer : MonoBehaviour
     private bool nextDiaDone2 = false;
     private bool isFinished = false;
     public bool inCorout = false;
+    private bool inPuzzle = false;
+    private bool gotCorrectAnswer = false;
+    private bool solvedPuzzle = false;
 
     public GameObject background;
 
     public delegate void InCoroutine();
     public static event InCoroutine DisableClick;
+    public static event InCoroutine EnableClick;
     
 
     void OnEnable()
     {
         DialogueManager.finishedDialogue += advanceDialogue1;
+        PuzzleAnswer.correctAnswer += advanceAnswer;
     }
 
     void OnDisable()
     {
         DialogueManager.finishedDialogue -= advanceDialogue1;
+        PuzzleAnswer.correctAnswer -= advanceAnswer;
     }
 
     void Start()
@@ -48,6 +55,15 @@ public class DialogueSequencer : MonoBehaviour
         nextDiaDone1 = false;
         nextDiaDone2 = false;
         isFinished = false;
+        inPuzzle = false;
+        solvedPuzzle = false;
+
+    }
+
+    void advanceAnswer()
+    {
+        gotCorrectAnswer = true;
+        advanceDialogue1();
     }
 
     void advanceDialogue1()
@@ -56,14 +72,15 @@ public class DialogueSequencer : MonoBehaviour
         {
             background.SetActive(false);
             introDialogue = true;
-            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDialogue1.TriggerDialogue();
         }
 
         //after examining supermarket
         else if(superMarket.completed && vendingMachine.completed && !nextDiaDone)
         {
             inCorout = true;
-            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            //StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDialogue1.TriggerDialogue();
             nextDiaDone = true;
             superMarketObj.SetActive(false);
             vendingObj.SetActive(false);
@@ -77,7 +94,8 @@ public class DialogueSequencer : MonoBehaviour
         {
             inCorout = true;
             background.SetActive(true);
-            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            //StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDialogue1.TriggerDialogue();
             nextDiaDone1 = true;
         }
 
@@ -86,15 +104,27 @@ public class DialogueSequencer : MonoBehaviour
         {
             inCorout = true;
             background.SetActive(false);
-            StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            //StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDialogue1.TriggerDialogue();
             isFinished = true;
             
         }
-        if(isFinished)
+        else if(isFinished && !inPuzzle)
         {
             vendingPuzzle1.SetActive(true);
             vendingPuzzle2.SetActive(true);
             NicholasPuzzle.SetActive(true);
+            inPuzzle = true;
+        }
+
+        else if(inPuzzle && gotCorrectAnswer && !solvedPuzzle)
+        {
+            Debug.Log("Way to go");
+            //StartCoroutine(DialoguePauseThenGo(nextDialogue1));
+            nextDialogue1.TriggerDialogue();
+            solvedPuzzle = true;
+            NicholasPuzzlePanel.SetActive(false);
+
         }
 
         
@@ -102,10 +132,10 @@ public class DialogueSequencer : MonoBehaviour
 
 
 
-    IEnumerator DialoguePauseThenGo(DialogueTrigger dt)
+    /*IEnumerator DialoguePauseThenGo(DialogueTrigger dt)
     {
         yield return new WaitForSeconds(0.5f);
         dt.TriggerDialogue();
         inCorout = false;
-    }
+    }*/
 }

@@ -44,12 +44,18 @@ public class DialogueTrigger : MonoBehaviour
         
     }
 
+    public IEnumerator DialoguePauseThenGo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        TriggerDialogue();
+    }
+
     void Awake()
     {
         currentDiaNum = 0;
         if(autoRun)
         {
-            TriggerDialogue();
+            StartCoroutine(DialoguePauseThenGo());
         }
         
     }

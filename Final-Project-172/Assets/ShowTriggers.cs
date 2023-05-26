@@ -15,7 +15,7 @@ public class ShowTriggers : MonoBehaviour
         }
     }
 
-    public void setExit()
+    public void deactivateTriggers()
     {
         foreach (GameObject options in otherOptions)
         {
