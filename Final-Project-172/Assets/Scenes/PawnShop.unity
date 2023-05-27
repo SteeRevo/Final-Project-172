@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WatchItem
       objectReference: {fileID: 0}
+    - target: {fileID: 3467305133816150028, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3467305133816150029, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -631,6 +635,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: choices.Array.data[0]
       value: 
       objectReference: {fileID: 1509546662}
@@ -642,6 +650,46 @@ PrefabInstance:
       propertyPath: choices.Array.data[2]
       value: 
       objectReference: {fileID: 1720694427}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkFunctionNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkFunctionNames.Array.data[0]
+      value: showWatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1086030018}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6395695803363013287, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: location
       value: Apartment
@@ -852,6 +900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+--- !u!1 &1086030018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3467305133816150028, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
+  m_PrefabInstance: {fileID: 55889965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1343451136
 GameObject:
   m_ObjectHideFlags: 0

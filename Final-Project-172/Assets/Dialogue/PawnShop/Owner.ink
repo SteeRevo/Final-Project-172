@@ -1,3 +1,4 @@
+EXTERNAL showWatch()
 
 Hey! If it isn't Nicholas! What can I do for you, pal? #charName: Ruther
 
@@ -15,6 +16,7 @@ You do have the money you owe, right? Your total including fees and interest is 
     Ruther counts the notes carefully.
     Perfect. Let me get that watch for you. #charName: Ruther
     // call fn
+    ~ showWatch()
     ->DONE
 * No, not right now. #charName: Nicholas
     Well, you remember how this works right? #charName: Ruther
