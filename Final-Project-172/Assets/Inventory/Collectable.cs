@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Collectable : MonoBehaviour
 {
+    private ItemDatabase itemDatabaseScript;
 
     public CollectableType type;
     
@@ -12,6 +13,19 @@ public class Collectable : MonoBehaviour
     public GameObject InventoryHolder;
     private Player player;
     private Image collectableItem;
+
+    void Awake() {
+    }
+
+    void Start() {
+        itemDatabaseScript = InventoryHolder.GetComponent<ItemDatabase>();
+
+    }
+
+    // void Update() {
+    //     Debug.Log(itemDatabaseScript.storageList);
+    // }
+
     public void CollectItem() {
         Debug.Log("collected!");
         // Player player = GetComponent<Player>();
@@ -21,6 +35,8 @@ public class Collectable : MonoBehaviour
         // Player player = GetComponent<Player>();
         player.inventory.Add(this);
         collectableItem.enabled = false;
+        itemDatabaseScript.storageList.Add(this.type);
+        Debug.Log(itemDatabaseScript.storageList.Count);
     }
 }
 
