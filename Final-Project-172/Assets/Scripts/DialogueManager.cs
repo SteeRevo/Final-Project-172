@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using Ink.Runtime;
 
 public class DialogueManager : MonoBehaviour
@@ -17,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private string[] inkFunctionNames;
+    [SerializeField] private UnityEvent[] inkEvents;
     private Text[] choicesText;
     public bool isRunning = false;
 
@@ -40,6 +44,8 @@ public class DialogueManager : MonoBehaviour
         {
             choicesText[i] = choices[i].GetComponentInChildren<Text>();
         }
+
+        
     }
 
     void Update()
@@ -57,6 +63,17 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJson.text);
         currentLocation = (string)currentStory.variablesState["currentLocation"];
         Debug.Log(currentLocation);
+
+        Debug.Assert(inkFunctionNames.Length == inkEvents.Length, "inkFunctionNames and inkEvents must have same length");
+        for (int i = 0; i < inkEvents.Length; i++)
+        {
+            int index = i;
+            currentStory.BindExternalFunction(inkFunctionNames[i], () =>
+            {
+                inkEvents[index].Invoke();
+            });
+        }
+
         DisplayNextSentence();
     }
 

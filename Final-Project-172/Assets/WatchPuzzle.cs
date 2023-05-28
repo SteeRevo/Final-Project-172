@@ -17,10 +17,11 @@ public class WatchPuzzle : MonoBehaviour
     [SerializeField]
     private int targetHour = 4;
     [SerializeField]
-    private int targetMinute = 37;
+    private int targetMinute = 35;
 
+    // Range in positive and negative the minute had can be from the target
     [SerializeField]
-    private float degreeRange = 15;
+    private float minRange = 3;
 
     private float prevAngle;
 
@@ -40,6 +41,7 @@ public class WatchPuzzle : MonoBehaviour
         Vector2 local = position - new Vector2(transform.position.x, transform.position.y);
 
         prevAngle = Mathf.Atan2(local.y, local.x) * 180 / Mathf.PI;
+        UnitTests();
     }
 
     public void DragHandler(BaseEventData data)
@@ -69,21 +71,69 @@ public class WatchPuzzle : MonoBehaviour
     public void PointerUpHandler(BaseEventData data)
     {
 
-        float minuteAngle = 360 - minuteHand.rotation.eulerAngles.z;
-        float hourAngle = 360 - hourHand.rotation.eulerAngles.z;
-        Debug.Log(minuteAngle);
-        Debug.Log(hourAngle);
+        float minute = angleToMinute(360 - minuteHand.rotation.eulerAngles.z);
+        float hour = angleToHour(360 - hourHand.rotation.eulerAngles.z);
+        Debug.Log(minute);
+        Debug.Log(hour);
 
-        float targetMinAngle = Mathf.LerpAngle(0, 360, targetMinute / 60);
-        float targetHrAngle = Mathf.LerpAngle(0, 360, targetHour / 12) + Mathf.LerpAngle(0, 30, targetMinute / 60);
-
-        if (minuteAngle > targetMinAngle + degreeRange / 2 && minuteAngle < targetMinAngle - degreeRange / 2)
+        if (hour >= targetHour && hour < targetHour + 1)
         {
-            if (hourAngle > targetHrAngle + degreeRange / 2 && hourAngle < targetHrAngle - degreeRange / 2)
+            if (minute > targetMinute - minRange && minute < targetMinute + minRange)
             {
-                Debug.Log("Correct!");
+                Debug.Log("You Did It!");
             }
         }
+    }
+
+    // convert angle of hour hand (in degrees between 0 and 360) to an hour
+    private float angleToHour(float angleHr)
+    {
+        float a = angleHr % 360;
+        // idk if this is a cheap hack but its how im doin this
+        if (a < 30)
+        {
+            return Mathf.Lerp(12, 13, a / 30);
+        } else
+        {
+            a = a - 30;
+            return Mathf.Lerp(1, 12, a / 330);
+        }
+    }
+
+    private float angleToMinute(float angleMin)
+    {
+        float a = angleMin = angleMin % 360;
+        return Mathf.Lerp(0, 60, a / 360);
+    }
+
+    private void UnitTests()
+    {
+        // Hour tests
+        Debug.Assert(angleToHour(0) == 12);
+
+        Debug.Assert(Mathf.Approximately(angleToHour(18), 12.6f));
+
+        Debug.Assert(angleToHour(30) == 1);
+
+        Debug.Assert(angleToHour(90) == 3);
+
+        Debug.Assert(angleToHour(270) == 9);
+
+        Debug.Assert(angleToHour(360) == 12);
+
+        // Minute Tests
+
+        Debug.Assert(angleToMinute(0) == 0);
+
+        Debug.Assert(angleToMinute(90) == 15);
+
+        // 17 min
+        Debug.Assert(angleToMinute(102) == 17, "angleToMinute(102) == 17");
+
+        Debug.Assert(angleToMinute(180) == 30);
+
+        Debug.Assert(angleToMinute(360) == 0);
+
 
     }
 }
