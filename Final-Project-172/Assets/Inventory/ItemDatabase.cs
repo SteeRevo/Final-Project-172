@@ -15,51 +15,45 @@ public class ItemDatabase : MonoBehaviour
     // private Collectable collectableItemScript;
     // Start is called before the first frame update
     private Inventory inventory; 
-    public Sprite icon;
+    // public Sprite icon;
 
     // public GameObject inventoryPanel;
     public Player player;
-    public List<SlotsUI> slots = new List<SlotsUI>();
 
-    public List<CollectableType> storageList = new List<CollectableType>();
+    public List<Collectable> storageList = new List<Collectable>();
 
-    void Awake() {
+    void Start() {
 
         DontDestroyOnLoad(this.gameObject);
-        Debug.Log(player.inventory.slots.Count);
+        Debug.Log("hello");
+        Debug.Log(storageList.Count);
         for (int i = 0; i < storageList.Count; i++) {
             Collectable item = new Collectable();
-            item.type = storageList[i];
-            item.icon = icon;
-            inventory.Add(item);
+            item.type = storageList[i].type;
+            Debug.Log(item.type);
+            item.icon = storageList[i].icon;
+            Debug.Log(item.icon);
+            player.inventory.Add(item);
 
         }
-        
-        // if (slots.Count == player.inventory.slots.Count) {
-        //     for (int i = 0; i < slots.Count; i++) {
-        //         print(slots[i]);
-                // if (player.inventory.slots[i].type != CollectableType.NONE) {
-                //     slots[i].SetItem(player.inventory.slots[i]);
-                // } else {
-                //     slots[i].SetEmpty();
-                // } 
-        //     }
-        // }
 
-        // inventory = new Inventory(2);
-
-        // Collectable item = new Collectable();
-        // item.type = CollectableType.WALLET;
-        // item.icon = icon;
-        // inventory.Add(item);
     }
 
+
+
+
     // void Start() {
-    //     storageList = new List<CollectableType>();
+    //     Collectable temp = new Collectable();
+    //         temp.type = CollectableType.WALLET;
+    //         Debug.Log(temp.type);
+    //         temp.icon = icon;
+    //         Debug.Log(temp.icon);
+    //         storageList.Add(temp);
+    //         player.inventory.Add(temp);
+    //         Debug.Log(player.inventory.slots.Count);
+    //     // storageList = new List<CollectableType>();
     // }
-    // void Update() {
-    //     Debug.Log(storageList.Count);
-    // }
+
 
     // void Start() {
     //     storageList = new List<string>();

@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 925597005}
-  slots: []
+  storageList: []
 --- !u!1 &1044494625
 GameObject:
   m_ObjectHideFlags: 0

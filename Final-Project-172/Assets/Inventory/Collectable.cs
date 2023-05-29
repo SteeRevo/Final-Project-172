@@ -35,7 +35,7 @@ public class Collectable : MonoBehaviour
         // Player player = GetComponent<Player>();
         player.inventory.Add(this);
         collectableItem.enabled = false;
-        itemDatabaseScript.storageList.Add(this.type);
+        itemDatabaseScript.storageList.Add(this);
         Debug.Log(itemDatabaseScript.storageList.Count);
     }
 }
