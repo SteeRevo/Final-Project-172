@@ -6,14 +6,18 @@ public class InventoryUISystem : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public Player player;
+    public GameObject InventoryHolder;
     public List<SlotsUI> slots = new List<SlotsUI>();
     // Start is called before the first frame update
-    void Awake() {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    // void Awake() {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
     void Start()
     {
+        InventoryHolder = GameObject.Find("InventoryHolder");
+        player = InventoryHolder.GetComponent<Player>();;
         //inventoryPanel.SetActive(false);
+        // player = ItemDatabaseManager.GetComponent<Player>();
     }
 
     // Update is called once per frame

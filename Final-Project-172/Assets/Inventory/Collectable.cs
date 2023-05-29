@@ -11,6 +11,7 @@ public class Collectable : MonoBehaviour
     
     public Sprite icon;
     public GameObject InventoryHolder;
+    // public GameObject ItemDatabaseManager;
     private Player player;
     private Image collectableItem;
 
@@ -18,7 +19,7 @@ public class Collectable : MonoBehaviour
     }
 
     void Start() {
-        itemDatabaseScript = InventoryHolder.GetComponent<ItemDatabase>();
+        // itemDatabaseScript = InventoryHolder.GetComponent<ItemDatabase>();
 
     }
 
@@ -31,12 +32,14 @@ public class Collectable : MonoBehaviour
         // Player player = GetComponent<Player>();
         // player.inventory.Add(this);
         player = InventoryHolder.GetComponent<Player>();
+        // player = ItemDatabaseManager.GetComponent<Player>();
         collectableItem = this.gameObject.GetComponent<Image>();
         // Player player = GetComponent<Player>();
         player.inventory.Add(this);
         collectableItem.enabled = false;
-        itemDatabaseScript.storageList.Add(this);
-        Debug.Log(itemDatabaseScript.storageList.Count);
+        ItemSingleton.instance.storageList.Add(this);
+        // itemDatabaseScript.storageList.Add(this);
+        Debug.Log( ItemSingleton.instance.storageList.Count);
     }
 }
 

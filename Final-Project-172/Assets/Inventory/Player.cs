@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
    public Inventory inventory;
    void Awake() {
-    inventory = new Inventory(2);
+      inventory = new Inventory(2);
+      // inventory = ItemSingleton.instance.inventory;
    }
 }
 
