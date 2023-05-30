@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueSequencer : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class DialogueSequencer : MonoBehaviour
         advanceDialogue1();
     }
 
-    void advanceDialogue1()
+    public void advanceDialogue1()
     {
         if(!introDialogue)
         {
@@ -109,7 +110,7 @@ public class DialogueSequencer : MonoBehaviour
             isFinished = true;
             
         }
-        else if(isFinished && !inPuzzle)
+        else if(isFinished && !inPuzzle && !solvedPuzzle)
         {
             vendingPuzzle1.SetActive(true);
             vendingPuzzle2.SetActive(true);
@@ -123,8 +124,13 @@ public class DialogueSequencer : MonoBehaviour
             //StartCoroutine(DialoguePauseThenGo(nextDialogue1));
             nextDialogue1.TriggerDialogue();
             solvedPuzzle = true;
+            inPuzzle = false;
             NicholasPuzzlePanel.SetActive(false);
 
+        }
+        else if(!inPuzzle && solvedPuzzle)
+        {
+            SceneManager.LoadScene(7);
         }
 
         
