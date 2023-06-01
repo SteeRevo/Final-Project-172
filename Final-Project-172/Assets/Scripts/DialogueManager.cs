@@ -9,8 +9,10 @@ using Ink.Runtime;
 public class DialogueManager : MonoBehaviour
 {
 
+    private const string DISPLAY_TAG = "displayName";
     private const string CHAR_TAG = "charName";
     private const string BG_TAG = "background";
+    private const string OP_TAG = "operators";
 
     public Text nameText;
     public Text dialogueText;
@@ -19,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private LayoutManager layoutManager;
     [SerializeField] private string[] inkFunctionNames;
     [SerializeField] private UnityEvent[] inkEvents;
     private Text[] choicesText;
@@ -31,8 +34,10 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
     private string currentSentence;
     private string charName;
+    private string displayName;
     private string currentLocation;
     private bool isMakingChoice = false;
+    private IDictionary<string, string[]> operators = new Dictionary<string, string[]>();
 
     public delegate void CompletedDialogue();
     public static event CompletedDialogue finishedDialogue;
@@ -88,7 +93,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (!currentStory.canContinue)
         {
-            
             EndDialogue();
             return;
         }
@@ -98,6 +102,10 @@ public class DialogueManager : MonoBehaviour
             currentSentence = currentStory.Continue();
             HandleTags(currentStory.currentTags);
             nameText.text = charName;
+            foreach (KeyValuePair<string, string[]> kvp in operators)
+            {
+                layoutManager.operateCharacter(kvp);
+            }
             StopAllCoroutines();
             StartCoroutine(TypeSentence(currentSentence));
             DisplayChoices();
@@ -145,9 +153,22 @@ public class DialogueManager : MonoBehaviour
 
             switch (tagKey)
             {
+                case DISPLAY_TAG:
+                    Debug.Log("displayName=" + tagValue);
+                    displayName = tagValue;
+                    break;
                 case CHAR_TAG:
                     Debug.Log("charName=" + tagValue);
                     charName = tagValue;
+                    break;
+                case OP_TAG:
+                    // operators: "Nicholas: INSTANTIATE, DELETE, TRANSLATE | Silvia: DELETE"
+                    Debug.Log("operators=" + tagValue);
+                    operators = new Dictionary<string, string[]>();
+                    foreach (string o in tagValue.Split(";;"))
+                    {
+                        operators.Add(new KeyValuePair<string, string[]>(o.Split("-")[0], o.Split("-")[1].Split(";")));
+                    }
                     break;
                 case BG_TAG:
                     Debug.Log("background=" + tagValue);

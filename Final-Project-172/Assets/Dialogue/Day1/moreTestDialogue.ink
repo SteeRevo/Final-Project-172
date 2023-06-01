@@ -1,6 +1,6 @@
 VAR currentLocation = "Hospital"
 
-Oh good. You're up. #charName:Man in Suit
+Oh good. You're up. #charName:Man in Suit #operators: Nicholas - INSTANTIATE ; DELETE ; TRANSLATE ;; Silvia - DELETE
 
 You...I know you. #charName:???
 
