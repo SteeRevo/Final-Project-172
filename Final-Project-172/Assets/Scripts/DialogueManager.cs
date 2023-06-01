@@ -176,7 +176,7 @@ public class DialogueManager : MonoBehaviour
                     break;
                 default:
                     Debug.LogWarning("Tag cam in but is not in current scope");
-                 break;
+                    break;
             }
         }
     }
