@@ -7,19 +7,26 @@ using UnityEngine.SceneManagement;
 public class PrologueDS : MonoBehaviour
 {
 
+    public DialogueTrigger deadBodyhead;
     public DialogueTrigger deadBody;
+    public DialogueTrigger deadBodylegs;
     public GameObject deadBodyObj;
 
     public DialogueTrigger narrationDialogue;
+    public DialogueTrigger runawayDialogue;
 
     public GameObject background;
     public GameObject lightInDarkbg;
-    private bool runaway = false;
+    public bool runaway = false;
     private bool isFinished = false;
     public bool inCorout = false;
 
+    private bool p1 = false;
+
     public GameObject examineButton;
     public GameObject leaveButton;
+
+    private bool choseExamine = false;
 
     void OnEnable()
     {
@@ -33,49 +40,57 @@ public class PrologueDS : MonoBehaviour
 
     void Start()
     {
+        p1 = false;
         runaway = false;
         isFinished = false;
     }
 
     void advanceDialogue()
     {
+        if(!p1)
+        {
+            examineButton.SetActive(true);
+            leaveButton.SetActive(true);
+            p1 = true;
+        }
+
+
         
-        if(deadBody.completed && !runaway && !isFinished)
+        else if(deadBodyhead.completed && deadBodylegs.completed && deadBody.completed && !choseExamine)
         {
             examineButton.SetActive(false);
             leaveButton.SetActive(false);
-            lightInDarkbg.SetActive(true);
+            //lightInDarkbg.SetActive(true);
             deadBodyObj.SetActive(false);
-            inCorout = true;
-            StartCoroutine(DialoguePauseThenGo(narrationDialogue));
-            runaway = true;
+            
+            narrationDialogue.setDialogueNum(3);
+            narrationDialogue.TriggerDialogue();
+            choseExamine = true;
         }
 
-        else if(deadBody.completed && runaway && !isFinished)
+        else if(choseExamine)
         {
-            inCorout = true;
-            StartCoroutine(DialoguePauseThenGo(narrationDialogue));
+            background.SetActive(true);
+            StartCoroutine(PauseChangeScene());
+        }
+
+        else if(runaway && !isFinished)
+        {
+            lightInDarkbg.SetActive(true);
+            runawayDialogue.TriggerDialogue();
             isFinished = true;
         }
         
-        else if(deadBody.completed && isFinished && runaway)
+        else if(isFinished && runaway)
         {
             background.SetActive(true);
-            lightInDarkbg.SetActive(false);
             StartCoroutine(PauseChangeScene());
         }
     }
 
-    IEnumerator DialoguePauseThenGo(DialogueTrigger dt)
-    {
-        yield return new WaitForSeconds(0.5f);
-        dt.TriggerDialogue();
-        inCorout = false;
-    }
-
     IEnumerator PauseChangeScene()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene("VisualNovel");
     }
 }

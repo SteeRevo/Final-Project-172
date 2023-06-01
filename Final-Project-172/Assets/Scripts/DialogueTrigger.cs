@@ -21,6 +21,12 @@ public class DialogueTrigger : MonoBehaviour
 
     public DialogueSequencer ds;
 
+    public bool destroyAfter;
+
+    public FollowMouse cursorText;
+
+    public SetCustomCursor setcursor;
+
 
 
     public void TriggerDialogue()
@@ -28,14 +34,22 @@ public class DialogueTrigger : MonoBehaviour
         
         if (!dialogueManager.dialogueisRunning)
         {
-            Debug.Log(currentDiaNum);
+            Debug.Log("currentDiaNum " + currentDiaNum);
+            Debug.Log("dialouge count " + (dialogueList.Count - 1));
             dialogueBox.SetActive(true);
             dialogueManager.StartDialogue(dialogueList[currentDiaNum]);
             completed = true;
-            if(currentDiaNum < (dialogueList.Count - 1)){
+            if(currentDiaNum == (dialogueList.Count - 1) && destroyAfter)
+            {
+                setcursor.DefaultCursor();
+                Debug.Log("Destroy this");
+                gameObject.SetActive(false);
+            }
+            else if(currentDiaNum < (dialogueList.Count - 1)){
                 currentDiaNum += 1;
                 
             }
+            
         }
         else
         {
