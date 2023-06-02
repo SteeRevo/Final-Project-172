@@ -15,6 +15,7 @@ public class LayoutManager : MonoBehaviour
     [SerializeField] private Texture2D[] charSprites;
 
     public Image background;
+    public Sprite[] backgroundImages;
     public Sprite superMarket;
 
     public void changeBackground(string backgroundName) 
@@ -52,5 +53,16 @@ public class LayoutManager : MonoBehaviour
             }
         }
         return;
+    }
+
+    public void setBackground(int index)
+    {
+        if (index < backgroundImages.Length)
+        {
+            background.sprite = backgroundImages[index];
+        } else
+        {
+            Debug.Log("index " + index + " out of range");
+        }
     }
 }
