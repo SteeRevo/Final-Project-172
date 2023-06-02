@@ -150,7 +150,6 @@ public class DialogueManager : MonoBehaviour
             
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
-
             switch (tagKey)
             {
                 case DISPLAY_TAG:
@@ -162,7 +161,6 @@ public class DialogueManager : MonoBehaviour
                     charName = tagValue;
                     break;
                 case OP_TAG:
-                    // operators: "Nicholas: INSTANTIATE, DELETE, TRANSLATE | Silvia: DELETE"
                     Debug.Log("operators=" + tagValue);
                     operators = new Dictionary<string, string[]>();
                     foreach (string o in tagValue.Split(";;"))

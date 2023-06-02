@@ -35,7 +35,7 @@ public class LayoutManager : MonoBehaviour
         Debug.Log("operationStart");
         foreach (string s in operation.Value)
         {
-            switch (s)
+            switch (s.Trim())
             {
                 case INSTANTIATE_OP:
                     Debug.Log("enter Instantiation");

@@ -2117,6 +2117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f6ac273f2dc1640a7e3f21f714478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charSprites:
+  - {fileID: 2800000, guid: df2a30b0e33e02548abc1ecf00c0c5c4, type: 3}
+  - {fileID: 2800000, guid: 12bfb6e838897234494512b15192b585, type: 3}
+  - {fileID: 2800000, guid: f2acbb59f030b784dae26d0275417d78, type: 3}
   background: {fileID: 75921498}
   superMarket: {fileID: 21300000, guid: fa3d243dd451dcd4c8ae37084bafb3fd, type: 3}
 --- !u!4 &1862097446
@@ -4875,6 +4879,10 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 491633415}
+    - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
+      propertyPath: layoutManager
+      value: 
+      objectReference: {fileID: 1862097445}
     - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: choices.Array.size
       value: 3
