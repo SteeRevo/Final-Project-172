@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 5203386730af0a54d9e209991cf01dc7, type: 3}
     - target: {fileID: 3467305133816150030, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
       propertyPath: type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3467305133816150030, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
       propertyPath: InventoryHolder
@@ -410,9 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae861cb366efc4d7caf457a13385a58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a11f4341fb4074759956a7d5931177f7, type: 3}
   player: {fileID: 665491626}
-  storageList: []
 --- !u!1 &666242499
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,12 +665,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1720694427}
     - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inventoryItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: inkFunctionNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inventoryItems.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inventoryVarNames.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: inkFunctionNames.Array.data[0]
       value: showWatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: inventoryVarNames.Array.data[0]
+      value: hasTicket
       objectReference: {fileID: 0}
     - target: {fileID: 6007040876585998437, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: inkEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
@@ -902,6 +916,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6395695804994908404, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
+      propertyPath: m_Text
+      value: LEFT CLICK TO CONTINUE
+      objectReference: {fileID: 0}
     - target: {fileID: 6395695805364543046, guid: e2f483408559f0b4895b8736d327a74d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1008,6 +1026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f6ac273f2dc1640a7e3f21f714478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charSprites: []
   background: {fileID: 0}
   superMarket: {fileID: 21300000, guid: fa3d243dd451dcd4c8ae37084bafb3fd, type: 3}
 --- !u!4 &1343451138

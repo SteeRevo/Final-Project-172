@@ -24,6 +24,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private LayoutManager layoutManager;
     [SerializeField] private string[] inkFunctionNames;
     [SerializeField] private UnityEvent[] inkEvents;
+
+    // name of ink story variable to set to true if associated item is in inventory
+    [SerializeField] private string[] inventoryVarNames;
+    [SerializeField] private CollectableType[] inventoryItems;
     private Text[] choicesText;
     public bool isRunning = false;
 
@@ -68,6 +72,22 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJson.text);
         currentLocation = (string)currentStory.variablesState["currentLocation"];
         Debug.Log(currentLocation);
+        // here we set state variables for the scene based on inventory content
+        Debug.Assert(inventoryVarNames.Length == inventoryItems.Length, "inventoryVarNames and inventoryItems must have same length");
+        List<Collectable> inventory = ItemSingleton.instance.storageList;
+        for (int i = 0; i < inventoryVarNames.Length; i++)
+        {
+            for (int j = 0; j < inventory.Count; j++)
+            {
+                // using wallet for testing, TODO: change wallet to ticket when added
+                if (inventory[j].type == inventoryItems[i])
+                {
+                    currentStory.variablesState[inventoryVarNames[i]] = true;
+                }
+            }
+        }
+        
+        
 
         Debug.Assert(inkFunctionNames.Length == inkEvents.Length, "inkFunctionNames and inkEvents must have same length");
         for (int i = 0; i < inkEvents.Length; i++)

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WakingUpToApartment.unity
     guid: 57099db2c50b1284fb9cc367ab7375b9
+  - enabled: 1
+    path: Assets/Scenes/PawnShop.unity
+    guid: c93bb2118744f8341af48e9587266287
   m_configObjects: {}
