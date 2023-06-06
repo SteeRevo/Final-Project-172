@@ -28,6 +28,8 @@ public class PrologueDS : MonoBehaviour
 
     private bool choseExamine = false;
 
+    public Image bodyWalletImg;
+
     void OnEnable()
     {
         DialogueManager.finishedDialogue += advanceDialogue;
@@ -43,6 +45,8 @@ public class PrologueDS : MonoBehaviour
         p1 = false;
         runaway = false;
         isFinished = false;
+        bodyWalletImg.enabled = false;
+        Debug.Log("START bodyWalletImg.enabled: "+ bodyWalletImg.enabled);
     }
 
     void advanceDialogue()
@@ -52,10 +56,10 @@ public class PrologueDS : MonoBehaviour
             examineButton.SetActive(true);
             leaveButton.SetActive(true);
             p1 = true;
+            bodyWalletImg.enabled = true;
         }
 
 
-        
         else if(deadBodyhead.completed && deadBodylegs.completed && deadBody.completed && !choseExamine)
         {
             examineButton.SetActive(false);

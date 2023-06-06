@@ -20,7 +20,7 @@ public class Collectable : MonoBehaviour
 
     void Start() {
         // itemDatabaseScript = InventoryHolder.GetComponent<ItemDatabase>();
-
+    
     }
 
     // void Update() {
@@ -36,13 +36,21 @@ public class Collectable : MonoBehaviour
         collectableItem = this.gameObject.GetComponent<Image>();
         // Player player = GetComponent<Player>();
         player.inventory.Add(this);
+        Debug.Log(player.inventory.slots[1].type);
         collectableItem.enabled = false;
-        ItemSingleton.instance.storageList.Add(this);
+
+        ///
+        // ItemSingleton.instance.storageList.Add(this);
+        ///
+
         // itemDatabaseScript.storageList.Add(this);
-        Debug.Log( ItemSingleton.instance.storageList.Count);
+
+        ///
+        // Debug.Log( ItemSingleton.instance.storageList.Count);
+        ///
     }
 }
 
 public enum CollectableType {
-        NONE, WALLET, CAR_KEYS
+        NONE, WALLET, CAR_KEYS, BODY_WALLET, WATCH
 }

@@ -15,15 +15,9 @@ public class InventoryUISystem : MonoBehaviour
     void Start()
     {
         InventoryHolder = GameObject.Find("InventoryHolder");
-        player = InventoryHolder.GetComponent<Player>();;
+        player = InventoryHolder.GetComponent<Player>();
         //inventoryPanel.SetActive(false);
         // player = ItemDatabaseManager.GetComponent<Player>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ToggleInventory() {
@@ -39,6 +33,7 @@ public class InventoryUISystem : MonoBehaviour
     public void Setup() {
         if (slots.Count == player.inventory.slots.Count) {
             for (int i = 0; i < slots.Count; i++) {
+                // Debug.Log("player.inventory.slots[i].type"+player.inventory.slots[i].type);
                 if (player.inventory.slots[i].type != CollectableType.NONE) {
                     slots[i].SetItem(player.inventory.slots[i]);
                 } else {
