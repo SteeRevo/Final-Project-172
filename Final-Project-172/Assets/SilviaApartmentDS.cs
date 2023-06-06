@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class SilviaApartmentDS : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    GameObject blackBg, outApart, inApart;
+    
+    [SerializeField]
+    DialogueTrigger narration;
+
+    private bool enterApartment, meetingSilvia = false;
+
+    void OnEnable()
     {
+        DialogueManager.finishedDialogue += sequence;
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        DialogueManager.finishedDialogue -= sequence;
     }
+
+    void sequence()
+    {
+        if(!enterApartment){
+            enterApartment = true;
+            blackBg.SetActive(false);
+        }
+        else if(enterApartment && !meetingSilvia)
+        {
+            narration.TriggerDialogue();
+        }
+    }
+
+
 }

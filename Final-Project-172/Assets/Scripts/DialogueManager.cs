@@ -71,9 +71,9 @@ public class DialogueManager : MonoBehaviour
         dialogueisRunning = true;
         currentStory = new Story(inkJson.text);
         currentLocation = (string)currentStory.variablesState["currentLocation"];
-        Debug.Log(currentLocation);
+        //Debug.Log(currentLocation);
         // here we set state variables for the scene based on inventory content
-        Debug.Assert(inventoryVarNames.Length == inventoryItems.Length, "inventoryVarNames and inventoryItems must have same length");
+        /*Debug.Assert(inventoryVarNames.Length == inventoryItems.Length, "inventoryVarNames and inventoryItems must have same length");
         List<Collectable> inventory = ItemSingleton.instance.storageList;
         for (int i = 0; i < inventoryVarNames.Length; i++)
         {
@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
             {
                 inkEvents[index].Invoke();
             });
-        }
+        }*/
 
         DisplayNextSentence();
     }
