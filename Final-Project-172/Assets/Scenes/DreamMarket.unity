@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1137,12 +1137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923da2a3eb1287408d813769b234d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineTriggers:
-  - {fileID: 1893421082}
-  - {fileID: 916094529}
-  - {fileID: 156672028}
-  otherOptions:
+  ActiveTriggers: []
+  DeactiveTriggers:
   - {fileID: 1507527292}
+  ActiveButtons: []
+  UnactiveButtons: []
 --- !u!224 &380909174 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4745656056236228876, guid: e3fad3eed6eaaa34abe6bd08fa655f32, type: 3}
@@ -1731,12 +1730,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923da2a3eb1287408d813769b234d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineTriggers:
-  - {fileID: 1893421082}
-  - {fileID: 916094529}
-  - {fileID: 156672028}
-  otherOptions:
+  ActiveTriggers: []
+  DeactiveTriggers:
   - {fileID: 1242732889}
+  ActiveButtons: []
+  UnactiveButtons: []
 --- !u!1001 &544171674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2343,6 +2341,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740746274}
     - target: {fileID: 5255445003072218065, guid: ecce58eb77b4ced409bae82933fac2aa, type: 3}
+      propertyPath: disableScriptAfter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255445003072218065, guid: ecce58eb77b4ced409bae82933fac2aa, type: 3}
       propertyPath: dialogueList.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2554,11 +2556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923da2a3eb1287408d813769b234d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineTriggers:
+  ActiveTriggers:
   - {fileID: 1507527292}
-  otherOptions:
-  - {fileID: 156672028}
-  - {fileID: 1893421082}
+  DeactiveTriggers: []
+  ActiveButtons: []
+  UnactiveButtons: []
 --- !u!1001 &930866851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4348,7 +4350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1759726045
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4799,11 +4801,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923da2a3eb1287408d813769b234d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineTriggers:
+  ActiveTriggers:
   - {fileID: 1242732889}
-  otherOptions:
-  - {fileID: 916094529}
-  - {fileID: 156672028}
+  DeactiveTriggers: []
+  ActiveButtons: []
+  UnactiveButtons: []
 --- !u!1 &1927239763
 GameObject:
   m_ObjectHideFlags: 0
@@ -7057,7 +7059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6395695804762207320
 RectTransform:
   m_ObjectHideFlags: 0

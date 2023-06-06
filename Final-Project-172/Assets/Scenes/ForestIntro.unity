@@ -171,13 +171,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88440296}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5377186, y: 0.5377186, z: 0.5377186}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 14
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -461,7 +461,7 @@ RectTransform:
   m_Children:
   - {fileID: 634195290}
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -611,10 +611,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923da2a3eb1287408d813769b234d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  examineTriggers: []
-  otherOptions:
-  - {fileID: 169463645}
+  ActiveTriggers: []
+  DeactiveTriggers:
   - {fileID: 470288260}
+  - {fileID: 169463645}
+  ActiveButtons: []
+  UnactiveButtons: []
 --- !u!1001 &422123882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -861,7 +863,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1826,7 +1828,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2128,7 +2130,7 @@ RectTransform:
   - {fileID: 422123883}
   - {fileID: 505196166}
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2616,7 +2618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7742673681764032932, guid: a2c7de9750e245146bb4cdac6774e6ce, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7742673681764032932, guid: a2c7de9750e245146bb4cdac6774e6ce, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3023,7 +3025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5255445003072218069, guid: ecce58eb77b4ced409bae82933fac2aa, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5255445003072218069, guid: ecce58eb77b4ced409bae82933fac2aa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3192,7 +3194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 857804671241856343, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 857804671241856343, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3267,13 +3269,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
+      propertyPath: ActiveTriggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
       propertyPath: otherOptions.Array.data[0]
       value: 
       objectReference: {fileID: 169463645}
     - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
+      propertyPath: DeactiveTriggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
+      propertyPath: ActiveTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1110617448}
+    - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
       propertyPath: examineTriggers.Array.data[0]
       value: 
       objectReference: {fileID: 1110617448}
+    - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
+      propertyPath: DeactiveTriggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 470288260}
+    - target: {fileID: 857804671241856347, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
+      propertyPath: DeactiveTriggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 169463645}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5914ceee1a7eee84e9e7b0767839e8a1, type: 3}
 --- !u!114 &896784199081111104
@@ -3605,7 +3627,7 @@ PrefabInstance:
       objectReference: {fileID: 6395695804579015592}
     - target: {fileID: 6946561941732002923, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6946561941732002923, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3780,6 +3802,7 @@ RectTransform:
   - {fileID: 715061084}
   - {fileID: 888837662}
   - {fileID: 1000879056}
+  - {fileID: 88440297}
   - {fileID: 1110617449}
   - {fileID: 1004095658}
   - {fileID: 498977564}
@@ -3790,7 +3813,6 @@ RectTransform:
   - {fileID: 1984374}
   - {fileID: 1584960978}
   - {fileID: 636146492}
-  - {fileID: 88440297}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.183}
@@ -4062,7 +4084,7 @@ RectTransform:
   - {fileID: 7815738662915857633}
   - {fileID: 3237770260448773092}
   m_Father: {fileID: 6395695803565927494}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -4637,7 +4659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497337826374730940, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8497337826374730940, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
       propertyPath: m_AnchorMax.x

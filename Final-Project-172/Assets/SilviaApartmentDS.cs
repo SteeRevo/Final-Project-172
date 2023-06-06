@@ -72,6 +72,7 @@ public class SilviaApartmentDS : MonoBehaviour
         else if(goingToBed)
         {
             blackBg.SetActive(true);
+            SceneManager.LoadScene(9);
         }
 
     }

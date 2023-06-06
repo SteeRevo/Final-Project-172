@@ -22,6 +22,7 @@ public class DialogueTrigger : MonoBehaviour
     public DialogueSequencer ds;
 
     public bool destroyAfter;
+    public bool disableScriptAfter;
 
     public FollowMouse cursorText;
 
@@ -44,6 +45,13 @@ public class DialogueTrigger : MonoBehaviour
                 setcursor.DefaultCursor();
                 Debug.Log("Destroy this");
                 gameObject.SetActive(false);
+            }
+            if(currentDiaNum == (dialogueList.Count - 1) && disableScriptAfter)
+            {
+                //setcursor.DefaultCursor();
+                Debug.Log("Destroy this");
+                enabled = false;
+                //gameObject.SetActive(false);
             }
             else if(currentDiaNum < (dialogueList.Count - 1)){
                 currentDiaNum += 1;

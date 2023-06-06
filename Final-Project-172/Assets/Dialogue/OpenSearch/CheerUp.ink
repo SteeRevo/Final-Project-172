@@ -12,6 +12,6 @@ I think this will be a great way to job his memories, don't think? #charName: Si
 
 ... #charName: Cooper
 
-Fine. You're free to go. Just do get him into anything too straining. 
+Fine. You're free to go. Just don't get him into anything too straining. 
 
 WOO! Let's go, Mr.Nicholas. #charName: Silvia
