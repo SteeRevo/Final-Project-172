@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PawnShop.unity
     guid: c93bb2118744f8341af48e9587266287
+  - enabled: 1
+    path: Assets/Scenes/TheOpenSearch.unity
+    guid: c54e429a5291e07429c95056b3831080
   m_configObjects: {}
