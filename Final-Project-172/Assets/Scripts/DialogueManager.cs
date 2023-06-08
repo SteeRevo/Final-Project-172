@@ -120,6 +120,7 @@ public class DialogueManager : MonoBehaviour
         {
             
             currentSentence = currentStory.Continue();
+            operators = new Dictionary<string, string[]>();
             HandleTags(currentStory.currentTags);
             nameText.text = charName;
             foreach (KeyValuePair<string, string[]> kvp in operators)
