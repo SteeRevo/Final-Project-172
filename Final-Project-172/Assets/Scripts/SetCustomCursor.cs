@@ -21,13 +21,18 @@ public class SetCustomCursor : MonoBehaviour
     {
         //Debug.Log("mose entr");
         Cursor.SetCursor(hoverCursor, hotSpot, CursorMode.Auto);
-        cursorText.GetComponent<FollowMouse>().setActive = true;
-        cursorText.GetComponent<FollowMouse>().triggerName = textName;
+        if (cursorText)
+        {
+            cursorText.GetComponent<FollowMouse>().setActive = true;
+            cursorText.GetComponent<FollowMouse>().triggerName = textName;
+        }
+        
     }
 
     public void DefaultCursor()
     {
         Cursor.SetCursor(null, hotSpot, CursorMode.Auto);
-        cursorText.GetComponent<FollowMouse>().setActive = false;
+        if (cursorText)
+            cursorText.GetComponent<FollowMouse>().setActive = false;
     }
 }

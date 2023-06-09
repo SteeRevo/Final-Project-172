@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueisRunning = false;
     
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private Player player;
     [SerializeField] private GameObject[] choices;
     [SerializeField] private LayoutManager layoutManager;
     [SerializeField] private string[] inkFunctionNames;
@@ -73,8 +74,11 @@ public class DialogueManager : MonoBehaviour
         currentLocation = (string)currentStory.variablesState["currentLocation"];
         //Debug.Log(currentLocation);
         // here we set state variables for the scene based on inventory content
-        /*Debug.Assert(inventoryVarNames.Length == inventoryItems.Length, "inventoryVarNames and inventoryItems must have same length");
-        List<Collectable> inventory = ItemSingleton.instance.storageList;
+        /*List<Collectable> inventory = ItemSingleton.instance.storageList;
+        if (inventoryVarNames.Length != inventoryItems.Length)
+        {
+            Debug.LogError("inventoryVarNames and inventoryItems must have same length");
+        }
         for (int i = 0; i < inventoryVarNames.Length; i++)
         {
             for (int j = 0; j < inventory.Count; j++)
@@ -85,11 +89,13 @@ public class DialogueManager : MonoBehaviour
                     currentStory.variablesState[inventoryVarNames[i]] = true;
                 }
             }
+        }*/
+        
+        
+        if (inkFunctionNames.Length != inkEvents.Length)
+        {
+            Debug.LogWarning("inkFunctionNames and inkEvents must have same length");
         }
-        
-        
-
-        Debug.Assert(inkFunctionNames.Length == inkEvents.Length, "inkFunctionNames and inkEvents must have same length");
         for (int i = 0; i < inkEvents.Length; i++)
         {
             int index = i;
@@ -97,7 +103,7 @@ public class DialogueManager : MonoBehaviour
             {
                 inkEvents[index].Invoke();
             });
-        }*/
+        }
 
         DisplayNextSentence();
     }

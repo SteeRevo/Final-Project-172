@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class WatchPuzzle : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class WatchPuzzle : MonoBehaviour
     // Range in positive and negative the minute had can be from the target
     [SerializeField]
     private float minRange = 3;
+
+    [SerializeField] private UnityEvent onSolved;
 
     private float prevAngle;
 
@@ -80,6 +83,7 @@ public class WatchPuzzle : MonoBehaviour
         {
             if (minute > targetMinute - minRange && minute < targetMinute + minRange)
             {
+                onSolved.Invoke();
                 Debug.Log("You Did It!");
             }
         }
