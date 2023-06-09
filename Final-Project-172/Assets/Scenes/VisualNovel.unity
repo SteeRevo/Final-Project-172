@@ -692,8 +692,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is dummy Dialogue... It''s not really too interesting AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    AAA AAAA AAA AAAA '
+  m_Text: 
 --- !u!222 &491633416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2138,7 +2137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NPC Name
+  m_Text: ...
 --- !u!222 &1621337295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2773,6 +2772,7 @@ MonoBehaviour:
   background: {fileID: 75921498}
   superMarket: {fileID: 21300000, guid: fa3d243dd451dcd4c8ae37084bafb3fd, type: 3}
   canvas: {fileID: 1496202469}
+  characterCanvas: {fileID: 0}
 --- !u!4 &1862097446
 Transform:
   m_ObjectHideFlags: 0
