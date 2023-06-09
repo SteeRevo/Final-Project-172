@@ -131,7 +131,7 @@ public class DialogueSequencer : MonoBehaviour
         else if(!inPuzzle && solvedPuzzle)
         {
             
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene("WakingUpToApartment");
         }
 
         
