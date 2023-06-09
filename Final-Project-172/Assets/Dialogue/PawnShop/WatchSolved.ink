@@ -3,7 +3,7 @@ EXTERNAL endGame()
 
 \*click*
 
-Did you hear that? #charName: Sylvia
+Did you hear that? #charName: Silvia
 
 \*pop* #charName:
 ~openWatch()
@@ -14,7 +14,7 @@ Underneath, a strange inscription is revealed.
 
 Whoa, it worked! #charName: Nicholas
 
-I knew it! #charName: Sylvia
+I knew it! #charName: Silvia
 
 This is so strange... All I have is more questions now! #charName: Nicholas
 
