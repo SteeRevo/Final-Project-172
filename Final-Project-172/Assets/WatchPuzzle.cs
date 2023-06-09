@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WatchPuzzle : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class WatchPuzzle : MonoBehaviour
     private float minRange = 3;
 
     [SerializeField] private UnityEvent onSolved;
+    [SerializeField] private Sprite openSprite;
 
     private float prevAngle;
 
@@ -87,6 +89,14 @@ public class WatchPuzzle : MonoBehaviour
                 Debug.Log("You Did It!");
             }
         }
+    }
+
+    public void OpenUp()
+    {
+        Image faceImg = gameObject.GetComponent<Image>();
+        faceImg.sprite = openSprite;
+        hourHand.gameObject.SetActive(false);
+        minuteHand.gameObject.SetActive(false);
     }
 
     // convert angle of hour hand (in degrees between 0 and 360) to an hour

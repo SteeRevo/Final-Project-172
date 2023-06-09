@@ -32,4 +32,10 @@ public class LocationChanger : MonoBehaviour
         }
         
     }
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
 }
+
+
