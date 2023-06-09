@@ -5028,13 +5028,17 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 0.904953
       objectReference: {fileID: 0}
+    - target: {fileID: 8497337826374730941, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8497337826374730943, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
       propertyPath: m_Name
       value: CursorText
       objectReference: {fileID: 0}
     - target: {fileID: 8497337826374730943, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf685d9e816c78045b5d57eea6feda38, type: 3}
