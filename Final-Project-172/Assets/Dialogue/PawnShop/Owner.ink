@@ -5,7 +5,7 @@ Hey! If it isn't Nicholas! What can I do for you, pal? #charName: Ruther
 
 
 * {hasTicket} [(show ticket)] 
-    I'm here for this. I left my watch with you a few days ago? #charName: Nicholas
+    I'm here for this. I just want to see it, make sure it's still here? #charName: Nicholas
     ->give_ticket
     
 * [Just wanted to have a look around.]
@@ -13,15 +13,15 @@ Hey! If it isn't Nicholas! What can I do for you, pal? #charName: Ruther
 
 == give_ticket
 
-A few days? You left this with me 3 months ago, remember? #charName: Ruther
+Sorry pal, but you know the policy. I don't take anything from out back until your loan is repaid in full. #charName: Ruther
 
-You've just been renewing your loan each month since then. #charName: Ruther
+Huh? No way! What kind of policy is that? #charName: Nicholas
 
-Oh right. I have a lot going on right now, I must've forgot. #charName: Nicholas
+It's the policy you signed off on. #charName: Ruther
 
-Well, hope you didn't forget you need to repay everything. Total plus interest is $43. You have enough? #charName: Ruther
+Hey, You gonna waste any more of my time? Total plus interest is $43. You have enough? 
 
-* Yes, of course[ (give him the money)], here it is. #charName: Nicholas
+* Fine[ (give him the money)], here it is. #charName: Nicholas
 
     Ruther counts the notes carefully. #charName: 
     

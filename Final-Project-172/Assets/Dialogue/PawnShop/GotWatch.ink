@@ -5,7 +5,7 @@ You try to wind it up #charName:
 
 Thing doesn't even work! What use is it? #charName: Nicholas
 
-There must be some reason you told me you needed it. #charName: Sylvia
+There must be some reason you told me you needed it. #charName: Silvia
 
 I was hoping holding it would jog your memory, but...
 
@@ -15,11 +15,11 @@ This one doesn't work. Maybe you need to remind -it- of the time?
 
 I bet it's hiding something important if you set it to the right time, like a combination lock!
 
-Come on Sylvia, don't be ridiculous. It's just a broken old watch. #charName: Nicholas
+Come on Silvia, don't be ridiculous. It's just a broken old watch. #charName: Nicholas
 
 Maybe it has some sentimental meaning to me, but I still can't remember.
 
-Just think for a second, Nick. Can you remember a time of day that is significant in your memory? #charName: Sylvia
+Just think for a second, Nick. Can you remember a time of day that is significant in your memory? #charName: Silvia
 
 Well... let me see... #charName: Nicholas
 
