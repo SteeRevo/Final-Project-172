@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3467305133816150029, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3467305133816150029, guid: 9b4e54cea24f70b44a572f856e13c6d6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1217,7 +1217,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PRESS E TO CONTINUE
+  m_Text: LEFT CLICK TO CONTINUE
 --- !u!222 &841538132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2052,10 +2052,10 @@ RectTransform:
   - {fileID: 1086250432}
   - {fileID: 1718497955076738506}
   - {fileID: 831440381}
-  - {fileID: 6518470754860639806}
   - {fileID: 1741788789}
   - {fileID: 248029225}
   - {fileID: 1897319121}
+  - {fileID: 6518470754860639806}
   - {fileID: 8183086715094950483}
   - {fileID: 853271084}
   m_Father: {fileID: 0}
@@ -2451,7 +2451,7 @@ RectTransform:
   - {fileID: 3797950198669118542}
   - {fileID: 8371291857550922571}
   m_Father: {fileID: 1496202473}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -4969,7 +4969,7 @@ RectTransform:
   - {fileID: 2159647615564667472}
   - {fileID: 420748737144129696}
   m_Father: {fileID: 1496202473}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5656,10 +5656,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621337294}
     - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
-      propertyPath: textSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 1741788788}
@@ -5689,7 +5685,7 @@ PrefabInstance:
       objectReference: {fileID: 1649554921812278674}
     - target: {fileID: 6946561941732002923, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6946561941732002923, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: m_LocalPosition.x

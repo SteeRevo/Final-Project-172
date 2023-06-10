@@ -1,5 +1,6 @@
 EXTERNAL openWatch()
 EXTERNAL endGame()
+EXTERNAL curtains()
 
 \*click*
 
@@ -21,6 +22,8 @@ This is so strange... All I have is more questions now! #charName: Nicholas
 What would I have this for? And what does this mean? #charName: Nicholas
 
 ... #charName:
+
+~curtains()
 
 ...
 

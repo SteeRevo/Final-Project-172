@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Final-Project-172
+  companyName: Team 25
+  productName: Antimony-172
   defaultCursor: {fileID: 2800000, guid: c911bb53df8b40a44a2a80accde41380, type: 3}
   cursorHotspot: {x: -1, y: -1}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -155,7 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Final-Project-172
+    Standalone: com.Team-25.Antimony-172
   buildNumber:
     Standalone: 0
     iPhone: 0

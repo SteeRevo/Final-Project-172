@@ -175,9 +175,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
-  textSpeed: 12
+  textSpeed: 5
   dialogueisRunning: 0
   dialogueBox: {fileID: 0}
+  player: {fileID: 0}
   choices: []
+  layoutManager: {fileID: 0}
+  inkFunctionNames: []
+  inkEvents: []
+  inventoryVarNames: []
+  inventoryItems: 
   isRunning: 0
   textSound: {fileID: 7750486978362560955}

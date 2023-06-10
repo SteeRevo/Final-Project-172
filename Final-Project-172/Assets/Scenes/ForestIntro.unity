@@ -2709,7 +2709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &755840887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5755,10 +5755,6 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 6395695804229448801}
-    - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
-      propertyPath: textSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6946561941732002922, guid: ffc7debeee3cc0343ae6620a3d265279, type: 3}
       propertyPath: dialogueBox
       value: 
